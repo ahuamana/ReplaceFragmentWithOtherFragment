@@ -66,7 +66,7 @@ public class BlankFragment extends Fragment {
         View vista = inflater.inflate(R.layout.fragment_blank, container, false);
 
 
-        Toast.makeText(getContext(), "Segundo Fragment", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Segundo Fragment" + mParam1, Toast.LENGTH_SHORT).show();
 
         return  vista;
     }

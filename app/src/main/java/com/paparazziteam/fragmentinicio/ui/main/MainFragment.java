@@ -48,7 +48,7 @@ public class MainFragment extends Fragment {
 
                 FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.linearlayoutInicio,BlankFragment.newInstance("",""));
+                transaction.replace(R.id.linearlayoutInicio,BlankFragment.newInstance("ANTONY",""));
                 transaction.commit();
 
                 Log.e("TAG","Finalo segundo fragment");
