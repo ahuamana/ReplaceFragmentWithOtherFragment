@@ -15,11 +15,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.paparazziteam.fragmentinicio.R;
 
 public class MainFragment extends Fragment {
+
+    Button btnnuevo;
 
     private MainViewModel mViewModel;
     public static MainFragment newInstance() {
@@ -32,17 +35,26 @@ public class MainFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.main_fragment, container, false);
 
+        btnnuevo = vista.findViewById(R.id.btnMostrar);
+
+        Log.e("TAG","Inicio Fragment");
 
 
-        Log.e("TAG","Empresarial");
+        btnnuevo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.linearlayoutInicio,BlankFragment.newInstance("",""));
-        transaction.commit();
+                Log.e("TAG","Iniciando segundo fragment");
 
+                FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.linearlayoutInicio,BlankFragment.newInstance("",""));
+                transaction.commit();
 
-        Log.e("TAG","Final");
+                Log.e("TAG","Finalo segundo fragment");
+
+            }
+        });
 
 
 
